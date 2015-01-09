@@ -38,13 +38,6 @@
                 "label": "Logout"
             }
         },
-        "condition": {
-            "prototype": "montage/ui/condition.reel",
-            "properties": {
-                "element": {"#": "condition"},
-                "removalStrategy": "hide"
-            }
-        },
         "default": {
             "prototype": "ui/default.reel",
             "properties": {
@@ -55,6 +48,13 @@
             "prototype": "ui/login.reel",
             "properties": {
                 "element": {"#": "login"}
+            }
+        },
+        "logoutCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "logoutCondition"},
+                "removalStrategy": "hide"
             }
         },
         "substitution": {
@@ -69,7 +69,7 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <div data-montage-id="condition">
+        <div data-montage-id="logoutCondition">
             <button data-montage-id="button"></button>
         </div>
         <div data-montage-id="substitution">

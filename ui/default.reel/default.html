@@ -8,6 +8,23 @@
         "owner": {
             "properties": {
                 "element": {"#": "owner"}
+            },
+            "listeners": [
+                {
+                    "type": "removeStormEvent",
+                    "useCapture": false,
+                    "listener": {"@": "removeStormListener"}
+                }
+            ]
+        },
+        "removeStormListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "handleRemoveStorm",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
             }
         },
         "stormController": {
@@ -22,14 +39,13 @@
                 "contentController": {"<-": "@stormController"}
             }
         },
-        "stormName": {
-            "prototype": "montage/ui/text.reel",
+        "stormListItem": {
+            "prototype": "ui/storm-list-item.reel",
             "properties": {
-                "element": {"#": "stormName"},
-                "value": "Text"
+                "element": {"#": "stormListItem"}
             },
             "bindings": {
-                "value": {"<-": "@stormList:iteration.object.name"}
+                "stormData": {"<-": "@stormList:iteration.object"}
             }
         },
         "text": {
@@ -46,7 +62,7 @@
     <div data-montage-id="owner" class="Default">
         <p data-montage-id="text"></p>
         <ul data-montage-id="stormList">
-            <p data-montage-id="stormName"></p>
+            <div data-montage-id="stormListItem"></div>
         </ul>
     </div>
 </body>

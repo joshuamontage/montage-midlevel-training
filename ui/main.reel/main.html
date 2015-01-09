@@ -17,6 +17,11 @@
                     "type": "loginEvent",
                     "useCapture": false,
                     "listener": {"@": "actionEventListener"}
+                },
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener2"}
                 }
             ]
         },
@@ -24,6 +29,16 @@
             "prototype": "montage/core/event/action-event-listener",
             "properties": {
                 "action": "handleLogin",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "actionEventListener2": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "logoutActionHandler",
                 "handler": {"@": "owner"}
             },
             "_dev": {

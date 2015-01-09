@@ -27,7 +27,16 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function (firstTime) {
             if (firstTime) {
                 this.templateObjects.logoutCondition.condition = false;
-            }
+            } else {
+                this.templateObjects.logoutCondition.condition = false;
+                this.templateObjects.substitution.switchValue = "login";
+        }
+    },
+    logoutActionHandler: {
+        value: function(event) {
+            // Obviously a real logout handler would have much more logic
+            this.dispatchEventNamed("loginEvent", true, false, {successful:false});
+            event.stopPropagation();
         }
     }
 });

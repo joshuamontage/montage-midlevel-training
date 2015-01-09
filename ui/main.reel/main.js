@@ -20,6 +20,9 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             if (this.loggedIn) {
                 this.templateObjects.substitution.switchValue = "default";
                 this.templateObjects.logoutCondition.condition = true;
+            } else {
+                this.templateObjects.logoutCondition.condition = false;
+                this.templateObjects.substitution.switchValue = "login";
             }
         }
     },
@@ -27,9 +30,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function (firstTime) {
             if (firstTime) {
                 this.templateObjects.logoutCondition.condition = false;
-            } else {
-                this.templateObjects.logoutCondition.condition = false;
-                this.templateObjects.substitution.switchValue = "login";
+            } 
         }
     },
     logoutActionHandler: {

@@ -10,6 +10,28 @@
                 "element": {"#": "owner"}
             }
         },
+        "stormList": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "stormList"},
+                "content": [
+                    "Tropical Storm Wilma",
+                    "Hurricane Fred",
+                    "Tropical Storm Betty",
+                    "Hurricane Barney"
+                    ]
+            }
+        },
+        "stormName": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormName"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@stormList:iteration.object"}
+            }
+        },
         "text": {
             "prototype": "montage/ui/text.reel",
             "properties": {
@@ -23,6 +45,9 @@
 <body>
     <div data-montage-id="owner" class="Default">
         <p data-montage-id="text"></p>
+        <ul data-montage-id="stormList">
+            <p data-montage-id="stormName"></p>
+        </ul>
     </div>
 </body>
 </html>

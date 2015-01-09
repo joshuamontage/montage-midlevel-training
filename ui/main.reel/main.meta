@@ -10,13 +10,26 @@
       }
     }
   },
+  "blueprint_unnamed_loggedIn": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "loggedIn",
+      "blueprint": {"@": "root"},
+      "valueType": "boolean"
+    }
+  },
   "root": {
     "prototype": "montage/core/meta/module-blueprint",
     "properties": {
       "name": null,
       "parent": {"@": "blueprint_component_reference"},
+      "propertyBlueprints": [
+        {"@": "blueprint_unnamed_loggedIn"}
+      ],
       "propertyBlueprintGroups": {
-        "Main": []
+        "Main": [
+          {"@": "blueprint_unnamed_loggedIn"}
+        ]
       },
       "module": {
         "%": "ui/main.reel"

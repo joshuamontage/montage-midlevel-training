@@ -11,6 +11,38 @@
         "owner": {
             "properties": {
                 "element": {"#": "main"}
+            },
+            "listeners": [
+                {
+                    "type": "loginEvent",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
+                }
+            ]
+        },
+        "actionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "handleLogin",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "button": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "button"},
+                "enabled": true,
+                "label": "Logout"
+            }
+        },
+        "condition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "condition"},
+                "removalStrategy": "hide"
             }
         },
         "default": {
@@ -37,6 +69,9 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <div data-montage-id="condition">
+            <button data-montage-id="button"></button>
+        </div>
         <div data-montage-id="substitution">
             <div data-montage-id="login" data-arg="login"></div>
             <div data-montage-id="default" data-arg="default"></div>

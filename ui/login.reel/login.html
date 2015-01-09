@@ -10,11 +10,26 @@
                 "element": {"#": "owner"}
             }
         },
+        "button": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "button"},
+                "enabled": true,
+                "label": "Login"
+            }
+        },
+        "textField": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField"},
+                "placeholderValue": "Enter Password"
+            }
+        },
         "usernameInput": {
             "prototype": "digit/ui/text-field.reel",
             "properties": {
                 "element": {"#": "usernameInput"},
-                "placeholderValue": "Text"
+                "placeholderValue": "Enter Username"
             }
         }
     }
@@ -23,6 +38,8 @@
 <body>
     <div data-montage-id="owner" class="Login">
         <input data-montage-id="usernameInput" type="text">
+        <input data-montage-id="textField" type="text">
+        <button data-montage-id="button"></button>
     </div>
 </body>
 </html>

@@ -13,5 +13,12 @@ exports.Login = Component.specialize(/** @lends Login# */ {
         value: function Login() {
             this.super();
         }
+    },
+    loginActionHandler: {
+        value: function (event) {
+            // Obviously a real login handler would have much more logic
+            this.dispatchEventNamed("loginEvent", true, false, {successful:true});
+            event.stopPropagation();
+        }
     }
 });

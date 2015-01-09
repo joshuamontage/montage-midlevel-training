@@ -8,6 +8,23 @@
         "owner": {
             "properties": {
                 "element": {"#": "owner"}
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
+                }
+            ]
+        },
+        "actionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "loginActionHandler",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
             }
         },
         "button": {

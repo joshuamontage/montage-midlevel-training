@@ -16,7 +16,7 @@ exports.StormListItem = Component.specialize(/** @lends StormListItem# */ {
     },
     removeStormEvent : {
         value: function (event) {
-            this.dispatchEventNamed("removeStorm", this.stormData);
+            this.dispatchEventNamed("removeStorm", this.stormData.name);
             event.stopPropagation();
         }
     }

@@ -21,7 +21,7 @@
                 {
                     "type": "action",
                     "useCapture": false,
-                    "listener": {"@": "actionEventListener2"}
+                    "listener": {"@": "logoutButtonListener"}
                 }
             ]
         },
@@ -35,24 +35,6 @@
                 "isHidden": true
             }
         },
-        "actionEventListener2": {
-            "prototype": "montage/core/event/action-event-listener",
-            "properties": {
-                "action": "logoutActionHandler",
-                "handler": {"@": "owner"}
-            },
-            "_dev": {
-                "isHidden": true
-            }
-        },
-        "button": {
-            "prototype": "digit/ui/button.reel",
-            "properties": {
-                "element": {"#": "button"},
-                "enabled": true,
-                "label": "Logout"
-            }
-        },
         "default": {
             "prototype": "ui/default.reel",
             "properties": {
@@ -63,6 +45,24 @@
             "prototype": "ui/login.reel",
             "properties": {
                 "element": {"#": "login"}
+            }
+        },
+        "logoutButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "logoutButton"},
+                "enabled": true,
+                "label": "Logout"
+            }
+        },
+        "logoutButtonListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "logoutActionHandler",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
             }
         },
         "logoutCondition": {
@@ -85,7 +85,7 @@
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
         <div data-montage-id="logoutCondition">
-            <button data-montage-id="button"></button>
+            <button data-montage-id="logoutButton"></button>
         </div>
         <div data-montage-id="substitution">
             <div data-montage-id="login" data-arg="login"></div>

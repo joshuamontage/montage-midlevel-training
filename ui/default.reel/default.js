@@ -28,7 +28,7 @@ exports.Default = Component.specialize(/** @lends Default# */ {
     },
     handleRemoveStorm: {
         value: function (event) {
-            console.log("hey");
+            console.log(event);
             //var i = this.templateObjects.stormController.content.indexOf(item);
         }
     }

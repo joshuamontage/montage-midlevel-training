@@ -1,3 +1,7 @@
 .StormListItem {
 
 }
+
+.StormListItem > * {
+    display: inline-block;
+}

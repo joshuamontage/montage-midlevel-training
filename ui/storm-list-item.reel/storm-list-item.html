@@ -8,6 +8,65 @@
         "owner": {
             "properties": {
                 "element": {"#": "owner"}
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "removeEventListener"}
+                }
+            ]
+        },
+        "removeButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "removeButton"},
+                "enabled": true,
+                "label": "Remove"
+            }
+        },
+        "removeEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "removeItem",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "stormName": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormName"},
+                "value": ""
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stormData.name"}
+            }
+        },
+        "stormNameLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormNameLabel"},
+                "value": "Name:"
+            }
+        },
+        "stormType": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormType"},
+                "value": ""
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stormData.type"}
+            }
+        },
+        "stormTypeLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormTypeLabel"},
+                "value": "Type:"
             }
         }
     }
@@ -15,6 +74,11 @@
 </head>
 <body>
     <div data-montage-id="owner" class="StormListItem">
+        <p data-montage-id="stormNameLabel"></p>
+        <p data-montage-id="stormName"></p>
+        <p data-montage-id="stormTypeLabel"></p>
+        <p data-montage-id="stormType"></p>
+        <button data-montage-id="removeButton"></button>
     </div>
 </body>
 </html>

@@ -13,5 +13,13 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function Main() {
             this.super();
         }
+    },
+    handleLogin: {
+        value: function (event) {
+            this.loggedIn = event.detail.successful;
+            if (this.loggedIn) {
+                this.templateObjects.substitution.switchValue = "default";
+            }
+        }
     }
 });

@@ -19,6 +19,14 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             this.loggedIn = event.detail.successful;
             if (this.loggedIn) {
                 this.templateObjects.substitution.switchValue = "default";
+                this.templateObjects.logoutCondition.condition = true;
+            }
+        }
+    },
+    enterDocument: {
+        value: function (firstTime) {
+            if (firstTime) {
+                this.templateObjects.logoutCondition.condition = false;
             }
         }
     }

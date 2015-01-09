@@ -14,6 +14,13 @@ exports.Main = Component.specialize(/** @lends Main# */ {
             this.super();
         }
     },
+    enterDocument: {
+        value: function (firstTime) {
+            if (firstTime) {
+                this.templateObjects.logoutCondition.condition = false;
+            } 
+        }
+    },
     handleLogin: {
         value: function (event) {
             this.loggedIn = event.detail.successful;
@@ -24,13 +31,6 @@ exports.Main = Component.specialize(/** @lends Main# */ {
                 this.templateObjects.logoutCondition.condition = false;
                 this.templateObjects.substitution.switchValue = "login";
             }
-        }
-    },
-    enterDocument: {
-        value: function (firstTime) {
-            if (firstTime) {
-                this.templateObjects.logoutCondition.condition = false;
-            } 
         }
     },
     logoutActionHandler: {

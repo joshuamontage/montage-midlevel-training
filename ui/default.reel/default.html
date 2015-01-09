@@ -17,6 +17,9 @@
             "prototype": "montage/ui/repetition.reel",
             "properties": {
                 "element": {"#": "stormList"}
+            },
+            "bindings": {
+                "contentController": {"<-": "@stormController"}
             }
         },
         "stormName": {
@@ -26,7 +29,7 @@
                 "value": "Text"
             },
             "bindings": {
-                "value": {"<-": "@stormList:iteration.object"}
+                "value": {"<-": "@stormList:iteration.object.name"}
             }
         },
         "text": {

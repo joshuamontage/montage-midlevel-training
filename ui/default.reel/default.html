@@ -17,6 +17,15 @@
                 }
             ]
         },
+        "highlightedStorm": {
+            "prototype": "ui/storm-list-item.reel",
+            "properties": {
+                "element": {"#": "highlightedStorm"}
+            },
+            "bindings": {
+                "stormData": {"<-": "@stormlist.selection.0"}
+            }
+        },
         "removeStormListener": {
             "prototype": "montage/core/event/action-event-listener",
             "properties": {
@@ -61,6 +70,7 @@
 </head>
 <body>
     <div data-montage-id="owner" class="Default">
+        <div data-montage-id="highlightedStorm"></div>
         <p data-montage-id="text"></p>
         <ul data-montage-id="stormList">
             <div data-montage-id="stormListItem"></div>
